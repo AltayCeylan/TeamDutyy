@@ -31,11 +31,18 @@ Müdür
 	•	Kendi departmanına görev atar
 	•	Görevleri iptal edebilir
 	•	Departman bazlı istatistikleri izler
+	
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 004612" src="https://github.com/user-attachments/assets/ab67f739-9cd0-432e-8ae8-342d014d8c07" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 004618" src="https://github.com/user-attachments/assets/181263e1-2f1c-475b-a051-190a0244471f" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 004625" src="https://github.com/user-attachments/assets/0d5fb514-6807-4174-8baf-6a5e6bc45acb" />
 
 Çalışan
 	•	Sadece kendisine atanmış görevleri görür
 	•	Görevleri tamamlayabilir
 	•	Görev durumlarını ve kalan süreyi takip eder
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 005229" src="https://github.com/user-attachments/assets/00831ff9-531e-47aa-8de2-f8695da1bc1c" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 005236" src="https://github.com/user-attachments/assets/dd4852da-12b6-4189-9ba3-c5660d921000" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 005224" src="https://github.com/user-attachments/assets/0a6eb613-aee1-495c-8f00-56a18021a67d" />
 
 
 
