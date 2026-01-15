@@ -20,7 +20,8 @@ Uygulama; Admin, Müdür ve Çalışan olmak üzere üç farklı rolü destekler
 	•	Tüm görevleri görür, oluşturur ve iptal edebilir
 	•	Genel istatistikleri ve KPI’ları takip eder
 
-  ![Alt](Ekran görüntüsü 2026-01-16 003903.png)
+<img width="404" height="886" alt="Ekran görüntüsü 2026-01-16 003903" src="https://github.com/user-attachments/assets/9ab4811e-7409-4358-a96d-339ae8da2e08" />
+
 
 Müdür
 	•	Sadece kendi departmanına ait çalışanları ve görevleri görür
