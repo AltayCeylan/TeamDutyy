@@ -29,6 +29,7 @@ class _ManagerCreateTaskPageState extends State<ManagerCreateTaskPage> {
   final _title = TextEditingController();
   final _desc = TextEditingController();
   DateTime? _dueAt;
+  String _priority = 'normal';
 
   @override
   void initState() {
@@ -180,6 +181,7 @@ class _ManagerCreateTaskPageState extends State<ManagerCreateTaskPage> {
         'assignedToUid': _selectedEmployeeUid,
         'assignedByUid': uid,
         'status': 'pending',
+        'priority': _priority,
         'dueAt': _dueAt == null ? null : Timestamp.fromDate(_dueAt!),
         'createdAt': FieldValue.serverTimestamp(),
         'doneAt': null,
@@ -283,6 +285,32 @@ class _ManagerCreateTaskPageState extends State<ManagerCreateTaskPage> {
                        ],
                      ),
                    ),
+                ),
+                const SizedBox(height: 12),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.white.withOpacity(0.05),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: Colors.white12),
+                  ),
+                  child: DropdownButtonFormField<String>(
+                    value: _priority,
+                    items: const [
+                       DropdownMenuItem(value: 'low', child: Text('Düşük Öncelik')),
+                       DropdownMenuItem(value: 'normal', child: Text('Normal Öncelik')),
+                       DropdownMenuItem(value: 'high', child: Text('Yüksek Öncelik (Acil)')),
+                    ],
+                    onChanged: (v) => setState(() => _priority = v!),
+                    dropdownColor: const Color(0xFF1E293B),
+                    style: GoogleFonts.outfit(color: Colors.white),
+                    decoration: InputDecoration(
+                       prefixIcon: Icon(Icons.flag_outlined, color: Colors.blueGrey.shade200),
+                       labelText: 'Öncelik Seviyesi',
+                       labelStyle: GoogleFonts.outfit(color: Colors.white54),
+                       border: InputBorder.none,
+                    ),
+                  ),
                 ),
               ],
             ),

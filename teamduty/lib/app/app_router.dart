@@ -19,6 +19,7 @@ import '../features/manager/manager_home_page.dart';
 import '../features/manager/manager_create_task_page.dart';
 import '../features/admin/admin_tasks_page.dart';
 import '../features/admin/managers_page.dart';
+import '../features/profile/profile_page.dart';
 
 
 
@@ -119,6 +120,10 @@ GoRoute(
           final taskId = state.pathParameters['taskId']!;
           return TaskDetailPage(companyId: companyId, taskId: taskId);
         },
+      ),
+      GoRoute(
+        path: '/profile',
+        builder: (context, state) => const ProfilePage(),
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

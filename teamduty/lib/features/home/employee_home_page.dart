@@ -177,7 +177,10 @@ class _EmployeeHomePageState extends State<EmployeeHomePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text('Merhaba,', style: GoogleFonts.outfit(fontSize: 14, color: Colors.white70)),
-                    Text(displayName, style: GoogleFonts.outfit(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                    InkWell(
+                      onTap: () => context.push('/profile'),
+                      child: Text(displayName, style: GoogleFonts.outfit(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white)),
+                    ),
                   ],
                 ),
                 centerTitle: false,
@@ -521,6 +524,7 @@ class _TaskCard extends StatelessWidget {
     final isDone = status == 'done';
     final isCanceled = status == 'canceled';
     final isOverdue = dueAt != null && dueAt.isBefore(now) && !isDone && !isCanceled;
+    final priority = (m['priority'] as String?) ?? 'normal';
 
     Color statusColor = Colors.blueGrey;
     IconData statusIcon = Icons.circle_outlined;
@@ -536,6 +540,10 @@ class _TaskCard extends StatelessWidget {
       statusIcon = Icons.warning_rounded;
     }
 
+    Color priorityColor = Colors.transparent;
+    if (priority == 'high') priorityColor = Colors.redAccent;
+    if (priority == 'low') priorityColor = Colors.blueAccent;
+
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
       decoration: _cardDecoration(),
@@ -543,7 +551,7 @@ class _TaskCard extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           borderRadius: BorderRadius.circular(16),
-          onTap: () => context.go('/employee/task/${doc.id}'),
+          onTap: () => context.push('/company/$companyId/task/${doc.id}'),
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Row(
@@ -565,15 +573,31 @@ class _TaskCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        title, 
-                        style: GoogleFonts.outfit(
-                          color: Colors.white, 
-                          fontWeight: FontWeight.bold, 
-                          fontSize: 16,
-                          decoration: isDone ? TextDecoration.lineThrough : null,
-                          decorationColor: Colors.white54,
-                        ),
+                      Row(
+                        children: [
+                          if (priority == 'high')
+                             Padding(
+                               padding: const EdgeInsets.only(right: 6),
+                               child: Icon(Icons.priority_high_rounded, size: 16, color: Colors.redAccent),
+                             ),
+                           if (priority == 'low')
+                             Padding(
+                               padding: const EdgeInsets.only(right: 6),
+                               child: Icon(Icons.arrow_downward_rounded, size: 16, color: Colors.blueAccent),
+                             ),
+                          Expanded(
+                            child: Text(
+                              title, 
+                              style: GoogleFonts.outfit(
+                                color: Colors.white, 
+                                fontWeight: FontWeight.bold, 
+                                fontSize: 16,
+                                decoration: isDone ? TextDecoration.lineThrough : null,
+                                decorationColor: Colors.white54,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                       const SizedBox(height: 4),
                       if (dueAt != null)

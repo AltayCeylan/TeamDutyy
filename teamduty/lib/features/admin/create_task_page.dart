@@ -22,6 +22,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   String? _departmentId;
   String? _selectedEmployeeUid;
   DateTime? _dueAt;
+  String _priority = 'normal';
 
   bool _saving = false;
 
@@ -133,6 +134,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
         assignedToUid: toUid,
         departmentId: depId,
         dueAt: _dueAt,
+        priority: _priority,
       );
 
       if (!mounted) return;
@@ -260,7 +262,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                                 ),
                                 child: Row(
                                   children: [
-                                    Icon(Icons.event, color: Colors.blueGrey.shade200),
+                                    Icon(Icons.event_outlined, color: Colors.blueGrey.shade200),
                                     const SizedBox(width: 12),
                                     Text(
                                       _dueAt == null ? 'Bitiş Tarihi Seç (Opsiyonel)' : _fmtDue(_dueAt),
@@ -276,6 +278,18 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                                 ),
                               ),
                             ),
+                             const SizedBox(height: 12),
+                             _buildDropdown(
+                               value: _priority,
+                               items: const [
+                                 DropdownMenuItem(value: 'low', child: Text('Düşük Öncelik')),
+                                 DropdownMenuItem(value: 'normal', child: Text('Normal Öncelik')),
+                                 DropdownMenuItem(value: 'high', child: Text('Yüksek Öncelik (Acil)')),
+                               ],
+                               label: 'Öncelik Seviyesi',
+                               icon: Icons.flag_outlined,
+                               onChanged: (v) => setState(() => _priority = v!),
+                             ),
                           ],
                         ),
                       ),

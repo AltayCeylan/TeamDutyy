@@ -14,6 +14,7 @@ class TaskService {
     required String assignedToUid,
     required String departmentId,
     DateTime? dueAt,
+    String priority = 'normal',
   }) async {
     final u = _auth.currentUser;
     if (u == null) throw Exception('Oturum yok');
@@ -31,6 +32,7 @@ class TaskService {
       'assignedByUid': u.uid,
       'departmentId': departmentId,
       'status': 'pending', // pending | done | canceled
+      'priority': priority,
       'dueAt': dueAt == null ? null : Timestamp.fromDate(dueAt),
       'createdAt': FieldValue.serverTimestamp(),
        'updatedAt': FieldValue.serverTimestamp(),

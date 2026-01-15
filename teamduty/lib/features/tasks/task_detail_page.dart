@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:go_router/go_router.dart';
 
 import 'package:teamduty/ui/td_scaffold.dart';
 
@@ -228,6 +229,7 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
          final title = (data['title'] as String?) ?? 'Görev';
          final desc = (data['description'] as String?) ?? '';
          final status = (data['status'] as String?) ?? 'pending';
+         final priority = (data['priority'] as String?) ?? 'normal';
 
          final dueRaw = data['dueAt'];
          DateTime? dueAt;
@@ -264,6 +266,10 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                appBar: AppBar(
                  title: Text('Görev Detayı', style: GoogleFonts.outfit(color: Colors.white, fontWeight: FontWeight.bold)),
                  centerTitle: true,
+                 leading: IconButton(
+                   icon: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white),
+                   onPressed: () => context.pop(),
+                 ),
                  backgroundColor: Colors.transparent,
                  iconTheme: const IconThemeData(color: Colors.white),
                  actions: [
@@ -315,13 +321,15 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                                    Wrap(
                                       spacing: 8, runSpacing: 8,
                                       children: [
-                                        _StatusChip(
-                                          label: isCanceled ? 'İPTAL' : (isDone ? 'TAMAMLANDI' : 'BEKLEMEDE'),
-                                          color: isCanceled ? Colors.redAccent : (isDone ? Colors.greenAccent : Colors.orangeAccent),
-                                        ),
-                                        if (isOverdue) _StatusChip(label: 'GECİKMİŞ', color: Colors.red),
-                                        if (dueAt != null && !isCanceled && !isDone) 
-                                          _StatusChip(label: _remainingLabel(dueAt!), color: Colors.blueAccent),
+                                          _StatusChip(
+                                            label: isCanceled ? 'İPTAL' : (isDone ? 'TAMAMLANDI' : 'BEKLEMEDE'),
+                                            color: isCanceled ? Colors.redAccent : (isDone ? Colors.greenAccent : Colors.orangeAccent),
+                                          ),
+                                          if (priority == 'high') _StatusChip(label: 'ACİL', color: Colors.red),
+                                          if (priority == 'low') _StatusChip(label: 'DÜŞÜK ÖNCELİK', color: Colors.blueAccent),
+                                          if (isOverdue) _StatusChip(label: 'GECİKMİŞ', color: Colors.deepOrange),
+                                          if (dueAt != null && !isCanceled && !isDone) 
+                                            _StatusChip(label: _remainingLabel(dueAt!), color: Colors.blueGrey),
                                       ],
                                    ),
                                  ],
