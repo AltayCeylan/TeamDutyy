@@ -20,7 +20,10 @@ Uygulama; Admin, Müdür ve Çalışan olmak üzere üç farklı rolü destekler
 	•	Tüm görevleri görür, oluşturur ve iptal edebilir
 	•	Genel istatistikleri ve KPI’ları takip eder
 
-<img width="404" height="886" alt="Ekran görüntüsü 2026-01-16 003903" src="https://github.com/user-attachments/assets/9ab4811e-7409-4358-a96d-339ae8da2e08" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 003903" src="https://github.com/user-attachments/assets/9ab4811e-7409-4358-a96d-339ae8da2e08" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 003831" src="https://github.com/user-attachments/assets/6d4f7a36-b5b2-4db9-8c6a-c8ff53b66000" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 003839" src="https://github.com/user-attachments/assets/c3cc84ba-5faf-4dc2-9b5f-2693aebbe24a" />
+<img width="150" height="300" alt="Ekran görüntüsü 2026-01-16 003849" src="https://github.com/user-attachments/assets/04bea805-315a-4ef3-aae1-4a152f17f0c3" />
 
 
 Müdür
