@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'package:teamduty/ui/td_scaffold.dart';
+
 class ManagerCreateTaskPage extends StatefulWidget {
   const ManagerCreateTaskPage({super.key});
 
@@ -230,8 +232,7 @@ class _ManagerCreateTaskPageState extends State<ManagerCreateTaskPage> {
         .where('departmentId', isEqualTo: dept)
         .where('role', whereIn: ['employee', 'manager']);
 
-    return Scaffold(
-      backgroundColor: Colors.transparent, // TDScaffold background parent
+    return TDScaffold(
       appBar: AppBar(
         title: Text('Görev Ata', style: GoogleFonts.outfit(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,

@@ -11,7 +11,7 @@ Future<void> main() async {
  // ✅ Edge-to-edge (üst/alt sistem barları transparan yapar)
  
   await SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
-    // ✅ Sistem bar renklerini transparan yap
+    // ✅ Sistem bar renklerini transparan yapf
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     systemNavigationBarColor: Colors.transparent,
