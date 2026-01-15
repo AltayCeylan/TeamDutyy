@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "342451583132",
+    "project_id": "teamduty-17a6e",
+    "storage_bucket": "teamduty-17a6e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:342451583132:android:e302d4066ba73583e9d559",
+        "android_client_info": {
+          "package_name": "com.example.teamduty"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYgBQVNENpaRl22obwcmqojpfge_H-e9o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,9 @@
+flutter_native_splash:
+  color: "#1A1A2E"
+  image: assets/images/teamduty_modern_logo.png
+
+  android_12:
+    image: assets/images/teamduty_modern_logo.png
+    color: "#1A1A2E"
+
+  fullscreen: true
