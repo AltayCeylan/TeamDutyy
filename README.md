@@ -1,3 +1,5 @@
+Youtube Link:https://www.youtube.com/watch?v=0iQOnstaGEM
+
 TeamDuty, şirket içi görev dağıtımı, takip ve raporlama süreçlerini dijitalleştirmek için geliştirilmiş Flutter + Firebase tabanlı bir mobil uygulamadır.<br>
 Uygulama; Admin, Müdür ve Çalışan olmak üzere üç farklı rolü destekler ve her role özel yetkilendirme ve arayüz sunar.<br>
 
